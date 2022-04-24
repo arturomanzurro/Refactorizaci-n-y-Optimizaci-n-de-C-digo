@@ -1,0 +1,231 @@
+package gameoop;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Arturo Manzur
+ */
+public class Iniciogame {
+    
+    public static void Inicio(String role,String opponent)
+    {
+        Soldier soldado = new Soldier();
+        Cavalry caballero = new Cavalry();
+        Magician mago = new Magician();
+        Computadora computadora = new Computadora();
+        Scanner scanner = new Scanner(System.in);
+        switch(role+opponent)
+        {
+            case "AD":{
+                
+                System.out.println( "\nGuerrero vs Computadora" ) ; 
+                int num =0;
+                while(computadora.Estadopersonaje()&&soldado.Estadopersonaje())
+                {
+                    num++;
+                    System.out.println( "Ronda #"+num ) ;
+                    if(Calculos.Aciertopersonajes(soldado.getHr())){
+                        computadora.Atacado(soldado.getAttack());
+                    }else{
+                        computadora.Esquivarataque();
+                    }
+                    
+                    if(Calculos.Aciertopersonajes(computadora.getHr())){
+                        soldado.Atacado(computadora.getAttack());
+                    }else{
+                        soldado.Esquivarataque();
+                    }
+                    scanner.nextLine();
+                }
+                break;
+            }
+            
+            case "BD":{
+                
+                System.out.println( "\ncaballero vs Computadora" ) ; 
+                int num =0;
+                while(computadora.Estadopersonaje()&&caballero.Estadopersonaje())
+                {
+                    num++;
+                    System.out.println( "Ronda #"+num ) ;
+                    if(Calculos.Aciertopersonajes(caballero.getHr())){
+                        computadora.Atacado(caballero.getAttack());
+                    }else{
+                        computadora.Esquivarataque();
+                    }
+                    
+                    if(Calculos.Aciertopersonajes(computadora.getHr())){
+                        caballero.Atacado(computadora.getAttack());
+                    }else{
+                        caballero.Esquivarataque();
+                    }
+                }
+                break;
+            }
+            
+            case "CD":{
+                
+                System.out.println( "\nMago vs Computadora" ) ; 
+                int num =0;
+                while(computadora.Estadopersonaje()&&mago.Estadopersonaje())
+                {
+                    num++;
+                    System.out.println( "Ronda #"+num ) ;
+                    if(Calculos.Aciertopersonajes(mago.getHr())){
+                        computadora.Atacado(mago.getAttack());
+                    }else{
+                        computadora.Esquivarataque();
+                    }
+                    
+                    if(Calculos.Aciertopersonajes(computadora.getHr())){
+                        mago.Atacado(computadora.getAttack());
+                    }else{
+                        mago.Esquivarataque();
+                    }
+                }
+                break;
+            }
+            
+            case "BA":{
+                
+                System.out.println( "\ncaballero vs Guerrero" ) ; 
+                int num =0;
+                while(soldado.Estadopersonaje()&&caballero.Estadopersonaje())
+                {
+                    num++;
+                    System.out.println( "Ronda #"+num ) ;
+                    if(Calculos.Aciertopersonajes(caballero.getHr())){
+                        soldado.Atacado(caballero.getAttack());
+                    }else{
+                        soldado.Esquivarataque();
+                    }
+                    
+                    if(Calculos.Aciertopersonajes(soldado.getHr())){
+                        caballero.Atacado(soldado.getAttack());
+                    }else{
+                        caballero.Esquivarataque();
+                    }
+                }
+                break;
+            }
+            
+            case "CA":{
+                
+                System.out.println( "\nMago vs Guerrero" ) ; 
+                int num =0;
+                while(soldado.Estadopersonaje()&&mago.Estadopersonaje())
+                {
+                    num++;
+                    System.out.println( "Ronda #"+num ) ;
+                    if(Calculos.Aciertopersonajes(mago.getHr())){
+                        soldado.Atacado(mago.getAttack());
+                    }else{
+                        soldado.Esquivarataque();
+                    }
+                    
+                    if(Calculos.Aciertopersonajes(soldado.getHr())){
+                        mago.Atacado(soldado.getAttack());
+                    }else{
+                        mago.Esquivarataque();
+                    }
+                }
+                break;
+            }
+            
+            case "AB":{
+                
+                System.out.println( "\nGuerrero vs caballero" ) ; 
+                int num =0;
+                while(caballero.Estadopersonaje()&&soldado.Estadopersonaje())
+                {
+                    num++;
+                    System.out.println( "Ronda #"+num ) ;
+                    if(Calculos.Aciertopersonajes(soldado.getHr())){
+                        caballero.Atacado(soldado.getAttack());
+                    }else{
+                        caballero.Esquivarataque();
+                    }
+                    
+                    if(Calculos.Aciertopersonajes(caballero.getHr())){
+                        soldado.Atacado(caballero.getAttack());
+                    }else{
+                        soldado.Esquivarataque();
+                    }
+                }
+                break;
+            }
+            
+            case "CB":{
+                
+                System.out.println( "\nMago vs caballero" ) ; 
+                int num =0;
+                while(caballero.Estadopersonaje()&&mago.Estadopersonaje())
+                {
+                    num++;
+                    System.out.println( "Ronda #"+num ) ;
+                    if(Calculos.Aciertopersonajes(mago.getHr())){
+                        caballero.Atacado(mago.getAttack());
+                    }else{
+                        caballero.Esquivarataque();
+                    }
+                    
+                    if(Calculos.Aciertopersonajes(caballero.getHr())){
+                        mago.Atacado(caballero.getAttack());
+                    }else{
+                        mago.Esquivarataque();
+                    }
+                }
+                break;
+            }
+            
+            case "AC":{
+                
+                System.out.println( "\nGuerrero vs Mago" ) ; 
+                int num =0;
+                while(mago.Estadopersonaje()&&soldado.Estadopersonaje())
+                {
+                    num++;
+                    System.out.println( "Ronda #"+num ) ;
+                    if(Calculos.Aciertopersonajes(soldado.getHr())){
+                        mago.Atacado(soldado.getAttack());
+                    }else{
+                        mago.Esquivarataque();
+                    }
+                    
+                    if(Calculos.Aciertopersonajes(mago.getHr())){
+                        soldado.Atacado(mago.getAttack());
+                    }else{
+                        soldado.Esquivarataque();
+                    }
+                }
+                break;
+            }
+            
+            case "BC":{
+                
+                System.out.println( "\ncaballero vs Mago" ) ; 
+                int num =0;
+                while(mago.Estadopersonaje()&&caballero.Estadopersonaje())
+                {
+                    num++;
+                    System.out.println( "Ronda #"+num ) ;
+                    if(Calculos.Aciertopersonajes(caballero.getHr())){
+                        mago.Atacado(caballero.getAttack());
+                    }else{
+                        mago.Esquivarataque();
+                    }
+                    
+                    if(Calculos.Aciertopersonajes(mago.getHr())){
+                        caballero.Atacado(mago.getAttack());
+                    }else{
+                        caballero.Esquivarataque();
+                    }
+                }
+                break;
+            }
+            
+            
+        }
+    }
+}
