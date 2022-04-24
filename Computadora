@@ -1,0 +1,9 @@
+package gameoop;
+
+/**
+ *
+ * @author Arturo Manzur
+ */
+public class Computadora extends GameUtil {
+    
+}
