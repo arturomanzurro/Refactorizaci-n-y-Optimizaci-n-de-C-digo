@@ -1,0 +1,20 @@
+package gameoop;
+
+import java.util.Random;
+
+/**
+ *
+ * @author Arturo Manzur
+ */
+public class Calculos {
+    
+    public static boolean Aciertopersonajes(double hr)
+    {
+        Random w = new Random();
+        int a = w.nextInt(100);
+        boolean flag=(a< (int)(hr*100)); 
+        return flag;
+    }
+    
+    
+}
